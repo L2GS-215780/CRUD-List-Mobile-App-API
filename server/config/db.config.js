@@ -2,8 +2,10 @@
 
 const mysql = require("mysql");
 
+const isDocker = process.env.RUNNING_IN_DOCKER === "true";
+
 const dbConn = mysql.createPool({
-    host: process.env.DB_HOST,
+    host: isDocker ? process.env.DB_HOST_DOCKER : process.env.DB_HOST_LOCALHOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
