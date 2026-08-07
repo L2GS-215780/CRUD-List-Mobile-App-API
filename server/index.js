@@ -21,7 +21,7 @@ const dbConnEstablish = require("./config/db.config");
 
 //define a root route
 app.get(`/`, (req, res) => {
-    res.send("Backend Development - Lorenz");
+    res.send("Backend Development");
 });
 
 //listen for requests
